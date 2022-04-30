@@ -1,4 +1,5 @@
 # created by virtualenv automatically
 newsapi/
 *.pyc
+instance/
 
