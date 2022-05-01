@@ -1,3 +1,5 @@
+from os import link
+from turtle import title
 from app import app
 
 
@@ -42,4 +44,22 @@ def process_results(news_list):
     """
     function that process results and return list of objexts
     
-    """    
+    """ 
+    
+    news_results = []
+    
+    for news_item in news_results:
+        
+        title = news_item.get("title")
+        author = news_item.get("author")
+        description = news_item.get("description")
+        link = news_item.get("url")
+        image = news_item.get("urlToImage")
+        publishedAt = news_item.get("publishedAt")
+        content = news_item.get("content")
+
+        
+        
+           
+    
+    
