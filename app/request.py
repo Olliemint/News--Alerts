@@ -6,15 +6,12 @@ from app import app
 import urllib.request,json
 
 
-
-
-
-
-
-from .models import news
+from .models import news,source
 
 
 Articles = news.Articles
+
+Source = source.Source
 
 
 
@@ -23,6 +20,8 @@ api_key = app.config['NEWS_API_KEY']
 
 #getting news url
 main_url = app.config['BASE_URL']
+
+source_url = app.config['SOURCE_URL']
 
 
 def get_article():
@@ -70,7 +69,13 @@ def process_results(news_list):
             news_results.append(news_object)
         
        
-    return news_results       
+    return news_results 
+
+
+
+def get_sources(category):
+    
+          
 
         
         
