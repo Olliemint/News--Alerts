@@ -73,9 +73,9 @@ def process_results(news_list):
 
 
 
-def get_sources(category):
+def get_sources():
     
-    get_sources_url = source_url.format(category,api_key)
+    get_sources_url = source_url.format(api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -96,7 +96,20 @@ def process_sources(source_list):
     
     """  
     
-    source_results = []          
+    source_results = []
+    for source_item in source_list:
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        
+        if name:
+            source_object = Source(name,description,url)
+            source_results.append(source_object)
+    
+    return source_results        
+        
+        
+              
           
 
         

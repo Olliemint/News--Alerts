@@ -2,7 +2,7 @@
 from unicodedata import category
 from flask import render_template
 from app import app
-from .request import get_article
+from .request import get_article,get_sources
 
 
 #views
@@ -16,6 +16,9 @@ def index():
     
     news = get_article()
     
-
+    sources= get_sources()
+    print(sources)
     
-    return render_template("index.html",news=news)
+    
+    
+    return render_template("index.html",news=news,sources = sources)
