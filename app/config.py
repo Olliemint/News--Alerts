@@ -1,9 +1,7 @@
-from distutils.debug import DEBUG
-
 
 class Config:
     
-    news_base_url = "https://newsapi.org/v2/everything?q=Apple&from=2022-04-30&sortBy=popularity&apiKey={}"
+    BASE_URL = "https://newsapi.org/v2/everything?q=Apple&from=2022-05-02&sortBy=popularity&apiKey={}"
     
     
 

@@ -8,7 +8,16 @@
 </head>
 <body>
 
-    <h1>news alert</h1>
+    <div>
+        <ul>
+            {% for news in news %}
+              <img src="{{news.urlToImage}}" alt="" width="200" height="200"> 
+              <p>{{news.content |truncate(100)}}</p>
+              
+            {% endfor %}
+        </ul>
+
+    </div>
     
 </body>
 </html>

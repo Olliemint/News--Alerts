@@ -1,26 +1,33 @@
-from os import link
-from turtle import title
+
+
 from app import app
 
 
 import urllib.request,json
 
+
+
+
+
+
+
 from .models import news
 
 
-News = news.News
+Articles = news.Articles
+
 
 
 #getting api key
-api_key = app.config["News_api"]
+api_key = app.config['NEWS_API_KEY']
 
 #getting news url
-main_url = app.config["news_base_url"]
+main_url = app.config['BASE_URL']
 
 
-def get_article(category):
+def get_article():
     
-    get_news_url = main_url.format(category,api_key)
+    get_news_url = main_url.format(api_key)
     
     with urllib.request.urlopen(get_news_url) as url:
         
@@ -30,9 +37,9 @@ def get_article(category):
         
         news_results = None
         
-        if get_news_response["results"]:
+        if get_news_response["articles"]:
             
-            news_results_list = get_news_response["results"]
+            news_results_list = get_news_response["articles"]
             
             news_results = process_results(news_results_list)
         
@@ -48,15 +55,22 @@ def process_results(news_list):
     
     news_results = []
     
-    for news_item in news_results:
+    for news_item in news_list:
         
         title = news_item.get("title")
         author = news_item.get("author")
         description = news_item.get("description")
         link = news_item.get("url")
-        image = news_item.get("urlToImage")
+        urlToImage = news_item.get("urlToImage")
         publishedAt = news_item.get("publishedAt")
         content = news_item.get("content")
+        
+        if title:
+            news_object = Articles(author, title, description, link, urlToImage,publishedAt,content)
+            news_results.append(news_object)
+        
+       
+    return news_results       
 
         
         
