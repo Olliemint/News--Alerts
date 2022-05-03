@@ -1,6 +1,7 @@
 #used to create an app instance
 from flask import Flask
 from .config import DevConfig
+from flask_bootstrap import Bootstrap
 
 
 #initializing news app
