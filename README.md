@@ -30,7 +30,7 @@
 ## Setup/Installation Requirements
 
 ### You need to have the following installed
-  * Python3.9
+  * Python3.8
   * Flask
 
 ```
