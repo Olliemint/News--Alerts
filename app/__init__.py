@@ -20,3 +20,4 @@ bootstrap = Bootstrap(app)
 #allow us create views
 
 from app import views
+from app import error
