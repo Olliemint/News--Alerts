@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+   
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
 .row h1{
     text-align: center;
     font-size: 50px;
@@ -11,4 +25,60 @@
     text-decoration: underline;
     text-decoration-color: orange;
     text-decoration-thickness: 10px;
+}
+button a{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+#nav{
+    background-color: crimson;
+}
+#center{
+    display: flex;
+    justify-content: center;
+  
+}
+#center a,li{
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+}
+.pfs{
+    font-weight: 600;
+    font-size: 20px;
+}
+.psec{
+    font-weight: 500;
+}
+.top{
+    height: 89vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.col-md-3 h5{
+    font-weight: 700;
+    text-align: center;
+    font-size: 25px;
+
+}
+.col-md-3 a{
+    display: grid;
+    place-content: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+.col-md-3 p{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.down{
+    height: 90vh;
+   
+    overflow-y: hidden;
 }
