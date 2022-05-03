@@ -5,7 +5,7 @@
 > Keep Up With The Current News Article (KUWTCNA) is a flask application that consumes the news API then lists and provides previews of news articles from various sources.
 
 ### Screenshot of the App
-<img src="">
+<img src="https://raw.githubusercontent.com/Olliemint/News--Alerts/main/app/static/assets/landing.png">
 
 
 
