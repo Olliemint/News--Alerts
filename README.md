@@ -60,13 +60,6 @@
 | To Read an entire article  | **Click an article** | Redirected to the news source's site to read the entire article |
 
 
-
-## TDD
-
-> To test the app, run this command in the terminal;
-
-`$ python3.8 articles_test.py`
-
 ### Technology & Tools
 * Python
 * Flask
