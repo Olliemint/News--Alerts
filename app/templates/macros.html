@@ -2,8 +2,20 @@
 
 {% macro displayNewsList(news_list) %}
     {% for news in news_list %}
-    <img src="{{news.urlToImage}}" alt="" width="200" height="200">
-      <li>{{news.description}}</li>
+    
+    <div class="col-lg-3">
+        
+        <div class="card" style="width: 30rem;">
+    <img src="{{news.urlToImage}}" alt="" height="200" width="300" >
+      <li>{{news.description | truncate(150)}}</li>
+      <button><a href="{{news.link}}">View story</a></button>
+
+    </div>
+
+
+    </div>
+   
+
 
     {% endfor %}
 
@@ -16,8 +28,11 @@
    
 
     {% for sources in source_list %}
-    <div class="card" style="width: 30rem;">
-        <div class="card-body">
+   
+        <div class="col-md-3">
+
+            <div class="card" style="width: 30rem;">
+       
           <h5 class="card-title">{{sources.name}}</h5>
           
 
@@ -25,9 +40,12 @@
           
           <p class="card-text">{{sources.description}}</p>
           <a href="{{sources.url}}" class="card-link">View source..</a>
-         
+
         </div>
-      </div>
+
+        </div>
+         
+       
 
     {% endfor %}
 
