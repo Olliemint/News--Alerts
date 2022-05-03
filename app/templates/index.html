@@ -7,21 +7,42 @@
     <title>News--Alerts</title>
     {% extends 'base.html'%}
     {% import 'macros.html' as macro%}
+
+
+    {% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {% endblock %}
+
 </head>
 <body>
     {% block content %}
-    <div>
-<h1>News</h1>
-<ul>
-    {{macro.displayNewsList(news)}}
-</ul>
-</div>
-<div>
-    <h1>Sources</h1>
-    <div>
-        {{macro.displaySourceList(sources)}}
-    </div>
-</div>
-  {% endblock %}  
+
+    <div class="row g-0">
+        <div class="col-sm-6 col-md-8">
+       
+                <div>
+            <h1>News</h1>
+            <ul>
+                {{macro.displayNewsList(news)}}
+            </ul>
+            </div>
+           
+
+        </div>
+        <div class="col-6 col-md-4">
+            <div>
+                <h1>Sources</h1>
+                <div>
+                    {{macro.displaySourceList(sources)}}
+                </div>
+            </div>
+             
+        </div>
+      </div>
+
+      {% endblock %} 
+    
+ 
 </body>
 </html>

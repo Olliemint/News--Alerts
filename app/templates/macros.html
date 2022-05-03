@@ -1,5 +1,8 @@
+
+
 {% macro displayNewsList(news_list) %}
     {% for news in news_list %}
+    <img src="{{news.urlToImage}}" alt="" width="200" height="200">
       <li>{{news.description}}</li>
 
     {% endfor %}
@@ -13,7 +16,18 @@
    
 
     {% for sources in source_list %}
-      <p>{{sources.name}}</p>
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{sources.name}}</h5>
+          
+
+        
+          
+          <p class="card-text">{{sources.description}}</p>
+          <a href="{{sources.url}}" class="card-link">View source..</a>
+         
+        </div>
+      </div>
 
     {% endfor %}
 
