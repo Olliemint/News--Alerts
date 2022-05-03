@@ -5,31 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News--Alerts</title>
+    {% import 'macros.html' as macro%}
 </head>
 <body>
-
     <div>
-        <ul>
-            {% for news in news %}
-              <img src="{{news.urlToImage}}" alt="" width="200" height="200"> 
-              <p>{{news.content |truncate(100)}}</p>
-              
-            {% endfor %}
-        </ul>
-
-    </div>
-
+<h1>News</h1>
+<ul>
+    {{macro.displayNewsList(news)}}
+</ul>
+</div>
+<div>
+    <h1>Sources</h1>
     <div>
-        <h1>Sources</h1>
-
-        <ul>
-            {% for sources in sources %}
-            <li>{{sources.name}}</li>
-            {% endfor %}
-        </ul>
-
-
+        {{macro.displaySourceList(sources)}}
     </div>
+</div>
     
 </body>
 </html>
