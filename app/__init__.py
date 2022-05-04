@@ -1,23 +1,29 @@
-#used to create an app instance
 from flask import Flask
-from .config import DevConfig
 from flask_bootstrap import Bootstrap
+from config import config_options
+
+bootstrap = Bootstrap()
 
 
-#initializing news app
+def create_app(config_name):
 
-app = Flask(__name__,instance_relative_config= True)
+    app = Flask(__name__)
+
+    # Creating the app configurations
+    app.config.from_object(config_options[config_name])
+
+    # Initializing flask extensions
+    bootstrap.init_app(app)
+    
+    
+     # Registering the blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+    
+    from .request import configure_request
+    configure_request(app)
 
 
-#setting configuration 
+    # Will add the views and forms
 
-app.config.from_object(DevConfig)
-
-app.config.from_pyfile("config.py")
-
-bootstrap = Bootstrap(app)
-
-#allow us create views
-
-from app import views
-from app import error
+    return app

@@ -1,28 +1,20 @@
-
-
-from textwrap import indent
-from app import app
-
-
 import urllib.request,json
-
-
-from .models import news,source
-
-
-Articles = news.Articles
-
-Source = source.Source
-
-
+from .models import Articles,Source
 
 #getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
+#getting urls
+main_url = None
+source_url = None
 
-#getting news url
-main_url = app.config['BASE_URL']
+def configure_request(app):
+    global api_key,main_url,source_url
+    main_url = app.config['BASE_URL']
 
-source_url = app.config['SOURCE_URL']
+    source_url = app.config['SOURCE_URL']
+    
+    api_key =  app.config['NEWS_API_KEY']
+
 
 
 def get_article():
